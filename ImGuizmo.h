@@ -39,9 +39,9 @@
 // - display rotation/translation/scale infos in local/world space and not only local
 // - finish local/world matrix application
 // - OPERATION as bitmask
-// 
+//
 // -------------------------------------------------------------------------------------------
-// Example 
+// Example
 #if 0
 void EditTransform(const Camera& camera, matrix_t& matrix)
 {
@@ -161,13 +161,15 @@ namespace IMGUIZMO_NAMESPACE
    IMGUI_API void SetRect(float x, float y, float width, float height);
    // default is false
    IMGUI_API void SetOrthographic(bool isOrthographic);
+   // Guy forgot to add it to the header ffs
+   IMGUI_API void SetOwnerWindowName(const char* newOwnderWindowName);
 
    // Render a cube with face color corresponding to face normal. Usefull for debug/tests
    IMGUI_API void DrawCubes(const float* view, const float* projection, const float* matrices, int matrixCount);
    IMGUI_API void DrawGrid(const float* view, const float* projection, const float* matrix, const float gridSize);
 
    // call it when you want a gizmo
-   // Needs view and projection matrices. 
+   // Needs view and projection matrices.
    // matrix parameter is the source matrix (where will be gizmo be drawn) and might be transformed by the function. Return deltaMatrix is optional
    // translation is applied in world space
    enum OPERATION
